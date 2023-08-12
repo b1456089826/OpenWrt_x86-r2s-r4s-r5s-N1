@@ -5,8 +5,8 @@ SHELL_FOLDER=$(dirname $(readlink -f "$0"))
 svn co https://github.com/coolsnowwolf/lede/trunk/target/linux/x86/files target/linux/x86/files
 rm -rf target/linux/x86/files/.svn
 
-svn co https://github.com/coolsnowwolf/lede/trunk/target/linux/x86/patches-5.15 target/linux/x86/patches-5.15
-rm -rf target/linux/x86/patches-5.15/.svn
+svn co https://github.com/coolsnowwolf/lede/trunk/target/linux/x86/patches-6.1 target/linux/x86/patches-6.1
+rm -rf target/linux/x86/patches-6.1/.svn
 
 curl -sfL https://raw.githubusercontent.com/coolsnowwolf/lede/master/package/kernel/linux/modules/video.mk -o package/kernel/linux/modules/video.mk
 curl -sfL https://raw.githubusercontent.com/coolsnowwolf/lede/master/target/linux/x86/base-files/etc/board.d/02_network -o target/linux/x86/base-files/etc/board.d/02_network
@@ -30,7 +30,7 @@ CONFIG_MMC_DEBUG=y
 CONFIG_MMC_SDHCI=y
 CONFIG_MMC_SDHCI_ACPI=y
 CONFIG_MMC_SDHCI_PCI=y
-' >> ./target/linux/x86/config-5.15
+' >> ./target/linux/x86/config-6.1
 
 sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqbalance.config
 
